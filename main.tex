@@ -1,0 +1,99 @@
+%--------------------
+% Packages
+% -------------------
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage{gentium}
+\usepackage{mathptmx} % Use Times Font
+\usepackage{float}
+
+\usepackage[pdftex]{graphicx} % Required for including pictures
+\usepackage[danish]{babel} % Swedish translations
+\usepackage[pdftex,linkcolor=black,pdfborder={0 0 0}]{hyperref} % Format links for pdf
+\usepackage{calc} % To reset the counter in the document after title page
+\usepackage{enumitem} % Includes lists
+\newcommand{\charactercount}[1]{
+\immediate\write18{expr `texcount -1 -sum -merge #1.tex` + `texcount -1 -sum -merge -char #1.tex` - 1 
+    > chars4.txt
+}\input{chars4.txt}}
+
+\frenchspacing % No double spacing between sentences
+\linespread{1.2} % Set linespace
+\usepackage[a4paper, lmargin=0.1666\paperwidth, rmargin=0.1666\paperwidth, tmargin=0.1111\paperheight, bmargin=0.1111\paperheight]{geometry} %margins
+%\usepackage{parskip}
+\usepackage{pdfpages}
+\usepackage[all]{nowidow} % Tries to remove widows
+\usepackage[protrusion=true,expansion=true]{microtype} % Improves typography, load after fontpackage is selected
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+
+\usepackage[nottoc]{tocbibind}
+\usepackage{graphicx}
+\graphicspath{ {./skærmbilleder/} }
+\usepackage{subfiles}
+
+%-----------------------
+% Set pdf information and add title, fill in the fields
+%-----------------------
+\hypersetup{ 	
+pdfsubject = {BDSA Assignment1 Solution},
+pdftitle = {Assignment1},
+pdfauthor = {Tue Edmund Gyhrs, Jonas Lindvig, Jakob Henriksen}
+}
+
+%-----------------------
+% Begin document
+%-----------------------
+\begin{document}
+%TC:ignore
+\begin{titlepage}
+    
+\centering
+	\rule{\linewidth}{1pt} \par
+	{\scshape\Huge\bfseries Assignment 1 \par} 
+	\vspace{1pt} {\Large \textbf{Kursus: Analysis Design and Software Architecture\\
+	IT Univ. of Copenhagen}\par}
+	\vspace{1pt} {\Large \textbf{Group: 46}\par}
+	\rule{\linewidth}{1pt} \par
+	\vspace*{2cm}
+\centering
+\Large \textbf{Hand-in date:} \today\\ [5mm]
+
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+
+
+
+\textbf{Group members}\\
+
+Tue Edmund Gyhrs\\
+Robin Ask Halberg\\
+Simon Brød\\
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\textbf{Emails} \\
+tugy@itu.dk\\
+halb@itu.dk\\
+sgun@itu.dk\\
+\end{flushright}
+\end{minipage}\\[4cm]
+Repository link:
+\url{https://github.itu.dk/tugy/Assignment3}
+%\centerline{Antal tegn: \charactercount{main}}
+\end{titlepage}
+\section*{C\#}
+\section*{Software Engineering}
+\end{document}
